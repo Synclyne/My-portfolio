@@ -397,7 +397,16 @@ nav .fa-solid{
     display: none;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 768px){
+
+
+body {
+    background-image: url('images/background-mobile.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+
 /* #header{
     background-image: url(images/phone-background.png);
 } */
