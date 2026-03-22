@@ -397,14 +397,21 @@ nav .fa-solid{
     display: none;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 600px){
 
 
 body {
-    background-image: url('images/background_mbl.jpg');
+    background-image: url('images/background-mobile.png');
     background-size: cover;
-    background-position: center;
+    background-position: top center; /* 👈 key fix */
   }
+
+  body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
 
 
 /* #header{
@@ -487,6 +494,5 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
+  background: rgba(0,0,0,0.3);
 }
