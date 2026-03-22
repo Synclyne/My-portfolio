@@ -491,3 +491,11 @@ body::after {
   background: rgba(0,0,0,0.4);
   z-index: -1;
 }
+
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url('images/background_mbl.jpg') center/cover no-repeat;
+  z-index: -1;
+}
