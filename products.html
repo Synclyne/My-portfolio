@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="products.css">
+  <link rel="stylesheet" href="products2.css">
+</head>
+<body class="products-page">
+
+  <section class="products-section">
+    <div class="products">
+
+      <a href="work.html?id=1" class="card short">
+        <img src="images/work-1.png" alt="Social Media App">
+        <h3>Social Media App</h3>
+      </a>
+
+      <a href="work.html?id=2" class="card tall">
+        <img src="images/work-2.png" alt="Music App">
+        <h3>Music App</h3>
+        </a>
+
+        <a href="work.html?id=3" class="card short">
+        <img src="images/work-3.png" alt="Shopping App">
+        <h3>Shopping App</h3>
+        </a>
+
+      <a href="work.html?id=4" class="card tall">
+        <img src="images/work-3.png" alt="Portfolio Project">
+        <h3>Portfolio Project</h3>
+      </a>
+
+      <a href="work.html?id=5" class="card tall">
+        <img src="images/work-3.png" alt="Photography App">
+        <h3>Photography App</h3>
+      </a>
+
+      <a href="work.html?id=6" class="card tall">
+        <img src="images/work-3.png" alt="Fitness App">
+        <h3>Fitness App</h3>
+      </a>
+
+      <a href="work.html?id=7" class="card short">
+        <img src="images/work-3.png" alt="Food Delivery App">
+        <h3>Food Delivery App</h3>
+      </a>
+
+      <a href="work.html?id=8" class="card short">
+        <img src="images/work-3.png" alt="Travel App">
+        <h3>Travel App</h3>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Optional JS for Pinterest-style auto row span -->
+  <script>
+    window.addEventListener('load', () => {
+      const cards = document.querySelectorAll('.products-section .card');
+      cards.forEach(card => {
+        const rowHeight = parseInt(getComputedStyle(card.parentElement).getPropertyValue('grid-auto-rows'));
+        const rowGap = parseInt(getComputedStyle(card.parentElement).getPropertyValue('gap'));
+        const cardHeight = card.querySelector('img').getBoundingClientRect().height;
+        const span = Math.ceil((cardHeight + rowGap) / (rowHeight + rowGap));
+        card.style.setProperty('--span', span);
+      });
+    });
+  </script>
+
+</body>
+</html>

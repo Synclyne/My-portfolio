@@ -1,0 +1,27 @@
+/* Mobile responsive for work.html gallery */
+@media (max-width: 700px) {
+  .product-container {
+    flex-direction: column; /* stack columns */
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .product-images,
+  .product-details {
+    flex: 1 1 100%; /* take full width */
+  }
+
+  #thumbnails {
+    grid-template-columns: repeat(2, 1fr); /* keep 2 per row on mobile */
+    gap: 12px;
+  }
+
+  #thumbnails img {
+    width: 100%;  /* fills the cell */
+    height: auto; /* keeps aspect ratio */
+  }
+
+  #main-img {
+    max-height: 400px; /* adjust for mobile */
+  }
+}

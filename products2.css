@@ -1,0 +1,101 @@
+html{
+    scroll-behavior: smooth;
+}
+
+/* -------------------- PRODUCTS PAGE ONLY -------------------- */
+.products-page {
+  background: linear-gradient(135deg, #ffe6ea 0%, #ffffff 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px 0;
+}
+
+/* Products grid - Pinterest/Masonry style */
+.products-section .products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* max 4 per row on desktop */
+  grid-auto-rows: 10px; /* base row height for masonry */
+  gap: 20px;
+  padding: 0 30px;
+}
+
+/* Individual card */
+.products-section .card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  grid-row-end: span var(--span, 1); /* auto row span from JS */
+}
+
+/* Card image */
+.products-section .card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom */
+.products-section .card:hover img {
+  transform: scale(1.05);
+}
+
+/* Card hover lift + shadow */
+.products-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Title overlay - Kicks Kenya style */
+.products-section .card h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff004f;
+  background: linear-gradient(to top, rgba(255,230,234,0.95), rgba(255,230,234,0.5));
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Hover: brighten overlay */
+.products-section .card:hover h3 {
+  background: linear-gradient(to top, rgba(255,230,234,1), rgba(255,230,234,0.7));
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .products-section .products {
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  }
+}
+
+@media (max-width: 700px) {
+  .products-section .products {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 500px) {
+  .products-section .products {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
+
+/* Example: make some cards taller */
+.products-section .card.tall img {
+  aspect-ratio: 1 / 1.5; /* tall card */
+}
+
+.products-section .card.short img {
+  aspect-ratio: 1 / 0.8; /* short card */
+}
