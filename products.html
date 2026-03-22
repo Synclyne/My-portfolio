@@ -7,9 +7,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="products.css">
   <link rel="stylesheet" href="products2.css">
+  <script src="https://kit.fontawesome.com/86b537907d.js" crossorigin="anonymous"></script>
 </head>
 <body class="products-page">
 
+  <!-- ===== NAV ===== -->
+
+  <!-- ===== PRODUCTS SECTION ===== -->
   <section class="products-section">
     <div class="products">
 
@@ -21,12 +25,12 @@
       <a href="work.html?id=2" class="card tall">
         <img src="images/work-2.png" alt="Music App">
         <h3>Music App</h3>
-        </a>
+      </a>
 
-        <a href="work.html?id=3" class="card short">
+      <a href="work.html?id=3" class="card short">
         <img src="images/work-3.png" alt="Shopping App">
         <h3>Shopping App</h3>
-        </a>
+      </a>
 
       <a href="work.html?id=4" class="card tall">
         <img src="images/work-3.png" alt="Portfolio Project">
@@ -56,8 +60,33 @@
     </div>
   </section>
 
-  <!-- Optional JS for Pinterest-style auto row span -->
+  <!-- ===== JS ===== -->
   <script>
+    /* ===== MOBILE MENU ===== */
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemenu.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closemenu() {
+        sidemenu.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    /* ===== HERO ANIMATION ===== */
+    window.addEventListener('DOMContentLoaded', () => {
+        const heroText = document.querySelector('.header-text');
+        const ctaButton = document.querySelector('.hero-cta');
+
+        setTimeout(() => {
+            if (heroText) heroText.classList.add('visible');
+            if (ctaButton) ctaButton.classList.add('visible');
+        }, 100);
+    });
+
+    /* ===== PINTEREST-STYLE CARD SPAN ===== */
     window.addEventListener('load', () => {
       const cards = document.querySelectorAll('.products-section .card');
       cards.forEach(card => {

@@ -27,6 +27,32 @@ body{
 }
 
 
+.hero-cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff004f; /* blush pink accent */
+    color: #fff;
+    font-weight: 500; /* medium, bold but not too heavy */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.hero-cta:hover {
+    background: #e60046; /* slightly darker on hover */
+    transform: translateY(-2px);
+}
+
+.header-text .hero-subtext {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 15px;
+    max-width: 500px; /* keeps it neat */
+    color: #fff; /* or blush pink if you prefer */
+    font-weight: 400; /* makes it normal weight, not bold */
+}
+
 
 
 
@@ -122,7 +148,7 @@ nav ul li a:hover::after{
 }
 
 .header-text{
-    margin-top: 20%;
+    margin-top: 6%;
     font-size: 30px;
 }
 .header-text h1{
@@ -412,7 +438,7 @@ body {
     background-image: url(images/phone-background.png);
 } */
 .header-text{
-    margin-top: 100%;
+    margin-top: 40%;
     font-size: 16px;
 }
 .header-text h1{
@@ -476,6 +502,8 @@ nav ul .fa-solid{
     font-size: 14px;
 }
 }
+
+
 #msg{
     color: #61b752;
     margin-top: -40px;
