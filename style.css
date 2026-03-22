@@ -401,17 +401,11 @@ nav .fa-solid{
 
 
 body {
-    background-image: url('images/background-mobile.png');
+    background-image: url('images/background_mbl.jpg');
     background-size: cover;
     background-position: top center; /* 👈 key fix */
   }
 
-  body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-}
 
 
 /* #header{
@@ -494,5 +488,6 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
 }
