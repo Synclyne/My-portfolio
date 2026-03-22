@@ -422,15 +422,15 @@ nav .fa-solid{
     display: block;
     font-size: 25px;
 }
-nav ul{
+nav ul {
     background: #ff004f;
     position: fixed;
     top: 0;
     right: 0;
+    bottom: 0; /* make it stretch to bottom */
     width: 200px;
-    height: 100vh;
     padding-top: 50px;
-    z-index: 2;
+    z-index: 10;
 
     transform: translateX(100%); /* hidden */
     transition: transform 0.3s ease;
@@ -438,9 +438,11 @@ nav ul{
 }
 
 /* when menu is open */
-nav ul.active{
+nav ul.active {
     transform: translateX(0);
 }
+
+
 nav ul li{
     display: block;
     margin: 25px;
