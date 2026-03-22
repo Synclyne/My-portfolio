@@ -210,20 +210,15 @@
 </script>
 
 <script>
-var sidemenu = document.getElementById("sidemenu");
-var overlay = document.getElementById("overlay"); // make sure you have this div in HTML
+    var sidemenu = document.getElementById("sidemenu");
 
-function openmenu(){
-    sidemenu.classList.add("active");
-    overlay.classList.add("active");  // show blur/dark overlay
-    document.body.style.overflow = "hidden"; // lock scroll on mobile
-}
+    function openmenu(){
+        sidemenu.classList.add("active");
+    }
 
-function closemenu(){
-    sidemenu.classList.remove("active");
-    overlay.classList.remove("active"); // hide overlay
-    document.body.style.overflow = "";   // unlock scroll
-}
+    function closemenu(){
+        sidemenu.classList.remove("active");
+    }
 </script>
 
 <script>
