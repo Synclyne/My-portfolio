@@ -426,12 +426,20 @@ nav ul{
     background: #ff004f;
     position: fixed;
     top: 0;
-    right: -200px;
+    right: 0;
     width: 200px;
     height: 100vh;
     padding-top: 50px;
     z-index: 2;
-    transition: right 0.5s;
+
+    transform: translateX(100%); /* hidden */
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+/* when menu is open */
+nav ul.active{
+    transform: translateX(0);
 }
 nav ul li{
     display: block;
