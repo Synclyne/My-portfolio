@@ -20,25 +20,20 @@ html{
   gap: 20px;
   padding: 0 30px;
 }
-
-/* Individual card */
+   /* CARD */
 .products-section .card {
   position: relative;
-  display: block;
   overflow: hidden;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  grid-row-end: span var(--span, 1); /* auto row span from JS */
 }
 
-/* Card image */
+/* Image */
 .products-section .card img {
   width: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  border-radius: 10px; /* 🔥 add this */
 }
-
 /* Hover zoom */
 .products-section .card:hover img {
   transform: scale(1.05);
@@ -50,7 +45,7 @@ html{
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* Title overlay - Kicks Kenya style */
+/* Title overlay*/
 .products-section .card h3 {
   position: absolute;
   bottom: 0;
@@ -61,16 +56,34 @@ html{
   font-size: 16px;
   font-weight: 500;
   color: #ff004f;
-  background: linear-gradient(to top, rgba(255,230,234,0.95), rgba(255,230,234,0.5));
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  transition: background 0.3s ease;
+
+  /* start hidden */
+  opacity: 0;
+  transform: translateY(100%);
+
+  /* subtle gradient, not too dark */
+  background: linear-gradient(to top, rgba(255,230,234,0.8), rgba(255,230,234,0.4));
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 0 0 10px 10px; /* always rounded bottom */
   box-sizing: border-box;
 }
 
 /* Hover: brighten overlay */
-.products-section .card:hover h3 {
-  background: linear-gradient(to top, rgba(255,230,234,1), rgba(255,230,234,0.7));
+.products-section .card:hover img {
+  transform: scale(1.05);
 }
+
+.products-section .card:hover::after {
+  opacity: 1;
+}
+
+.products-section .card:hover h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
 /* Responsive adjustments */
 @media (max-width: 1000px) {
@@ -98,4 +111,34 @@ html{
 
 .products-section .card.short img {
   aspect-ratio: 1 / 0.8; /* short card */
+}
+
+
+.products-section .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 10px; /* 🔥 add this */
+}
+
+/* .products-section .card:hover::after {
+  opacity: 1;
+} */
+
+/* When card is "active" (tapped) */
+.products-section .card.active img {
+  transform: scale(1.05);
+}
+
+.products-section .card.active::after {
+  opacity: 1;
+}
+
+.products-section .card.active h3 {
+  opacity: 1;
+  transform: translateY(0);
 }

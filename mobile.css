@@ -1,3 +1,8 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
 /* Mobile responsive for work.html gallery */
 @media (max-width: 700px) {
   .product-container {
@@ -23,5 +28,152 @@
 
   #main-img {
     max-height: 400px; /* adjust for mobile */
+  }
+}
+
+
+/* --------------------------- css for small screens ---------------*/
+
+@media only screen and (max-width: 600px){
+
+
+body {
+    background-image: url('images/background_mbl.jpg');
+    background-size: cover;
+    background-position: top center; /* 👈 key fix */
+  }
+
+
+
+/* #header{
+    background-image: url(images/phone-background.png);
+} */
+.header-text{
+    margin-top: 40%;
+    font-size: 16px;
+}
+.header-text h1{
+    font-size: 30px;
+}
+nav .fa-solid{
+    display: block;
+    font-size: 25px;
+}
+nav ul{
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+
+    transform: translateX(100%); /* hidden */
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+/* when menu is open */
+nav ul.active{
+    transform: translateX(0);
+}
+
+
+nav ul li{
+    display: block;
+    margin: 25px;
+}
+nav ul .fa-solid{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+.sub-title{
+    font-size: 40px;
+}
+.about-col-1, .about-col-2{
+    flex-basis: 100%;
+}
+.about-col-1{
+    margin-bottom: 30px;
+}
+.about-col-2{
+    font-size: 14px;
+}
+.tab-links{
+    font-size: 16px;
+    margin-right: 20px;
+}
+.contact-left, .contact-right{
+    flex-basis: 100%;
+}
+.copyright{
+    font-size: 14px;
+}
+}
+
+@media (max-width: 700px) {
+  .products-section .card h3 {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(100%);
+
+    /* Glass effect */
+    background: rgba(255, 230, 234, 0.6); /* soft blush pink */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #ff004f;
+    border-top: 1px solid rgba(255,255,255,0.4);
+
+    /* smoother look */
+    padding: 14px;
+  }
+
+  /* remove dark overlay */
+  .products-section .card::after {
+    display: none;
+  }
+
+  .products-section .products {
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 per row */
+    gap: 12px; /* slightly tighter spacing for mobile */
+    padding: 0 15px; /* reduce side padding */
+  }
+
+  .products-section .card {
+    border-radius: 8px; /* slightly smaller radius */
+  }
+
+  
+}
+
+
+/* Mobile: 2 cards per row in My Work section */
+@media (max-width: 700px) {
+  .work-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px; /* slightly smaller gap for mobile */
+  }
+}
+
+
+/* -------------------- MOBILE UNIFORM CARDS -------------------- */
+@media (max-width: 700px) {
+  .work-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
+    grid-gap: 20px;
+  }
+
+  .work img {
+    height: 250px; /* all images same height */
+    object-fit: cover; /* ensures it fills nicely */
+    width: 100%;
+  }
+
+  .layer {
+    padding: 0 15px; /* smaller padding for mobile */
   }
 }

@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="products.css">
   <link rel="stylesheet" href="products2.css">
+  <link rel="stylesheet" href="mobile.css">
   <script src="https://kit.fontawesome.com/86b537907d.js" crossorigin="anonymous"></script>
 </head>
 <body class="products-page">
 
   <!-- ===== NAV ===== -->
+   
 
   <!-- ===== PRODUCTS SECTION ===== -->
   <section class="products-section">
@@ -98,6 +100,35 @@
       });
     });
   </script>
+
+
+  <script>
+/* ===== MOBILE TAP HOVER EFFECT ===== */
+const cards = document.querySelectorAll('.products-section .card');
+
+cards.forEach(card => {
+  let tapped = false;
+
+  card.addEventListener('click', function(e) {
+    if (window.innerWidth <= 700) { // mobile only
+      if (!tapped) {
+        e.preventDefault(); // stop link first tap
+        tapped = true;
+
+        // remove active from all cards
+        cards.forEach(c => c.classList.remove('active'));
+
+        // activate this card
+        card.classList.add('active');
+
+        // reset tapped after 1.5s so user can tap again
+        setTimeout(() => { tapped = false; }, 1500);
+      }
+      // second tap goes through (link opens)
+    }
+  });
+});
+</script>
 
 </body>
 </html>
